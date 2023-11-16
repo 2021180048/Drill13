@@ -100,10 +100,10 @@ class Zombie:
         pass
 
     def move_reverse_slightly_to(self, tx, ty):
-        self.dir = math.atan2(ty - self.y, -(tx - self.x))
+        self.dir = math.atan2(-(ty - self.y), -(tx - self.x))
         self.speed = RUN_SPEED_PPS
         self.x += self.speed * math.cos(self.dir) * game_framework.frame_time
-        self.y -= self.speed * math.sin(self.dir) * game_framework.frame_time
+        self.y += self.speed * math.sin(self.dir) * game_framework.frame_time
         pass
 
     def move_to(self, r=0.5):
